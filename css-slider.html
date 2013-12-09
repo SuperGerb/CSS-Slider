@@ -18,6 +18,7 @@
 			width:375px;
 			vertical-align:top;
 			opacity:0;
+			filter: alpha(opacity=0); /*For IE8 and earlier*/
 			visibility:hidden; 
 		}
 		.slider input{
@@ -47,6 +48,7 @@
 		}
 		.slider li input:checked ~ img{
 			opacity:1;
+			filter: alpha(opacity=100); /*For IE8 and earlier*/
 			visibility:visible;
 			z-index:10;
 		}
@@ -86,9 +88,7 @@ Ex)
 	<input type="checkbox" id="toggle-1">
 	<div>Control me</div>
 
-Note about line 18: Hidden elements still take up room on the page (ie the page doesn't collapse around them). That's why use this instead of display:none.
-
-Need to add browser prefixes for opacity.
+Note about visibility: Hidden elements still take up room on the page (ie the page doesn't collapse around them), therefore some sections use this instead of display:none.
 
 http://joshnh.com/2012/08/14/making-a-pure-css-featured-image-slider/-->
 
